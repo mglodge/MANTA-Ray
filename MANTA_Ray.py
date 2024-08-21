@@ -34,7 +34,7 @@ or damages that arise in connection with the use of this code.
 
 
 
-# The main function below (MANTA_Ray_Q_abs) calculates absorption efficiency (using Eq. 5 of Lodge et al. 2024) given the following variables:
+# The main function below (Q_abs) calculates absorption efficiency (using Eq. 5 of Lodge et al. 2024) given the following variables:
 #
 #       wavelength: the wavelength of the electromagnetic radiation (in um).
 #
@@ -47,7 +47,7 @@ or damages that arise in connection with the use of this code.
 #       n,k: the real (n) and imaginary (k) components of refractive index respectively.
 #
 
-def Q_abs_MR(wavelength, radius, d_f, n, k):
+def Q_abs(wavelength, radius, d_f, n, k):
 
     # quick safety check to ensure that we are in the Rayleigh regime (wavelength >= 100*radius)
     if(wavelength>=(100*radius)):
@@ -110,8 +110,8 @@ def Q_abs_MR(wavelength, radius, d_f, n, k):
 
 
 # This uses the function above, but then also converts the absorption efficiency to an absorption cross-section (in um^2) at the end for convenience
-def C_abs_MR(wavelength, radius, d_f, n, k):
+def C_abs(wavelength, radius, d_f, n, k):
 
-    Q_abs = Q_abs_MR(wavelength, radius, d_f, n, k) # find Q_abs
+    Q_abs = Q_abs(wavelength, radius, d_f, n, k) # find Q_abs
 
     return Q_abs*3.14159*radius*radius # calculate C_abs = Q_abs*pi*R^2 in um^2
