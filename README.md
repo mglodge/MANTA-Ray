@@ -34,7 +34,8 @@ To use each of functions, just provide the above inputs, strictly in that order.
  	n = 3
 	k = 0.5
 	
-	Q_abs = MANTA_Ray.Q_abs(wavelength, radius, d_f, n, k)   # calculate Q_abs
+	Q_abs = MANTA_Ray.find_Q_abs(wavelength, radius, d_f, n, k)   # calculate Q_abs
+ 
 	print(Q_abs)
  
 If MANTA-Ray installed correctly, you should see:
@@ -43,13 +44,13 @@ If MANTA-Ray installed correctly, you should see:
 
 Two functions are provided:
 
-1) Q_abs: calculates absorption efficiency $Q_{abs,MR}$ (Eq. 5 in Lodge et al. 2024)
-2) C_abs: calculates absorption cross-section (where $C_{abs}=Q_{abs} \pi R^2$)
+1) find_Q_abs: calculates absorption efficiency $Q_{abs,MR}$ (Eq. 5 in Lodge et al. 2024)
+2) find_C_abs: calculates absorption cross-section (where $C_{abs}=Q_{abs} \pi R^2$)
 
 Both functions use the same input variables:
 
-	Q_abs = MANTA_Ray.Q_abs(wavelength, radius, d_f, n, k)
-	C_abs = MANTA_Ray.C_abs(wavelength, radius, d_f, n, k)
+	Q_abs = MANTA_Ray.find_Q_abs(wavelength, radius, d_f, n, k)
+	C_abs = MANTA_Ray.find_C_abs(wavelength, radius, d_f, n, k)
 
 If a pip install fails (or simply if you prefer), you could copy and paste the functions from MANTA_Ray.py directly into your code and use them in the same way.
 
