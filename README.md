@@ -1,12 +1,12 @@
 ![MANTA Ray logo final](https://github.com/user-attachments/assets/daace825-8432-44ba-a673-0f6d441a3116)
 
-MANTA-Ray (<ins>**M**</ins>odified <ins>**A**</ins>bsorption of <ins>**N**</ins>on-spherical <ins>**T**</ins>iny <ins>**A**</ins>ggregates in the <ins>**Ray**</ins>leigh regime) is a model that calculates the absorption efficiency and absorption cross-section of fractal aggregates. It is a very powerful and fast tool that can be used to estimate the amount of absorption that occurs in dust and haze particles of any shape, provided that the electomagnetic radiation is in the Rayleigh regime (see below for strict definition), often in the context of planetary atmospheres or protoplanetary disks. It obtains values within 10-20% of those calculated by a rigourous benchmark model (the discrete dipole approximation), but is $10^{13}$ times faster. It is provided here as a python function. For full details of the methodology, or if the code is useful in your project, please cite the paper below:
+MANTA-Ray (<ins>**M**</ins>odified <ins>**A**</ins>bsorption of <ins>**N**</ins>on-spherical <ins>**T**</ins>iny <ins>**A**</ins>ggregates in the <ins>**Ray**</ins>leigh regime) is a model that calculates the absorption efficiency and absorption cross-section of fractal aggregates. It is a very powerful and fast tool that can be used to estimate the amount of absorption that occurs in dust and haze particles of any shape, provided that the electromagnetic radiation is in the Rayleigh regime (see below for strict definition), often in the context of planetary atmospheres or protoplanetary disks. It obtains values within 10-20% of those calculated by a rigorous benchmark model (the discrete dipole approximation), but is $10^{13}$ times faster. It is provided here as a python function. For full details of the methodology, or if the code is useful in your project, please cite the paper below:
 
   "MANTA-Ray: Supercharging Speeds for Calculating the Optical Properties of Fractal Aggregates in the Long-Wavelength Limit" (2024), Lodge, M.G., Wakeford H.R., and Leinhardt, Z.M.
 
 # Getting started
 
-The easiest way to run MANTA-Ray is to install it into your python environment using pip (**IMPORTANT:** note the use of an **underscore _** instead of a **hyphon -**, as per the PEP 8 style guide for distributed packages):
+The easiest way to run MANTA-Ray is to install it into your python environment using pip (**IMPORTANT:** note the use of an **underscore _** instead of a **hyphen -**, as per the PEP 8 style guide for distributed packages):
 
 	pip install MANTA_Ray
 
@@ -37,7 +37,7 @@ To use each of functions, just provide the above inputs, strictly in that order.
 	Q_abs = Q_abs_MR(wavelength, radius, d_f, n, k)   # calculate Q_abs
 	print(Q_abs)
  
-If MANTA-Ray installed correcty, you should see:
+If MANTA-Ray installed correctly, you should see:
 
 	Q_abs = 0.021153387751343056  
 
@@ -65,4 +65,4 @@ Transmission Electron Microscope (TEM) images of solid matter in Earth's atmosph
 
 In the image above the two aggregates are both composed of 24 "monomers" (individual spheres), but in different arrangements. These shapes are characterised in many optical models by $d_f$ which is a number between 1 (representing a straight line) and 3 (compact and perfectly spherical).
 
-Modelling the optical properties of complex shapes is difficult, and Mie theory is often used (which assumes that the particles are spherical). However, this can often be a significant underestimate of the amout of absorption (by factors of up to 1,000 -- see Lodge et al. 2024). Calculating the optical properties for the true aggregate shape can be done using a rigourous code such as the discrete dipole approximation (DDA -- Draine and Flatau, 1994), but this is usually incredibly time consuming (and unfeasible for use in forward models that wish to study many wavelengths/particle sizes). In contrast, MANTA-Ray estimates absorption cross-sections with average accuracies of 10-20% compared to DDA, but $10^{13}$ times faster. It works for any wavelength, particle size, and refractive index $m$ within 1+0.01i< $m$ <11+11i. It is strictly only for use in the Rayleigh Regime (where the wavelength $\lambda$ is signficantly larger than the radius $R$ of a sphere of equivalent volume to the aggregate -- here we define this regime as $\lambda \geq 100R$).
+Modelling the optical properties of complex shapes is difficult, and Mie theory is often used (which assumes that the particles are spherical). However, this can often be a significant underestimate of the amount of absorption (by factors of up to 1,000 -- see Lodge et al. 2024). Calculating the optical properties for the true aggregate shape can be done using a rigorous code such as the discrete dipole approximation (DDA -- Draine and Flatau, 1994), but this is usually incredibly time consuming (and unfeasible for use in forward models that wish to study many wavelengths/particle sizes). In contrast, MANTA-Ray estimates absorption cross-sections with average accuracies of 10-20% compared to DDA, but $10^{13}$ times faster. It works for any wavelength, particle size, and refractive index $m$ within 1+0.01i< $m$ <11+11i. It is strictly only for use in the Rayleigh Regime (where the wavelength $\lambda$ is significantly larger than the radius $R$ of a sphere of equivalent volume to the aggregate -- here we define this regime as $\lambda \geq 100R$).
