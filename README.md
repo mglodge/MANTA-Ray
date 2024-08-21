@@ -1,6 +1,6 @@
 ![MANTA Ray logo final](https://github.com/user-attachments/assets/daace825-8432-44ba-a673-0f6d441a3116)
 
-MANTA-Ray (<ins>**M**</ins>odified <ins>**A**</ins>bsorption of <ins>**N**</ins>on-spherical <ins>**T**</ins>iny <ins>**A**</ins>ggregates in the <ins>**Ray**</ins>leigh regime) is a model that calculates the absorption efficiency and absorption cross-section of fractal aggregates. It is a very powerful and fast tool that can be used to estimate the amount of absorption that occurs in dust and haze particles of any shape, provided that the electromagnetic radiation is in the Rayleigh regime (see below for strict definition), often in the context of planetary atmospheres or protoplanetary disks. It obtains values within 10-20% of those calculated by a rigorous benchmark model (the discrete dipole approximation), but is $10^{13}$ times faster. It is provided here as a python function. For full details of the methodology, or if the code is useful in your project, please cite the paper below:
+MANTA-Ray (<ins>**M**</ins>odified <ins>**A**</ins>bsorption of <ins>**N**</ins>on-spherical <ins>**T**</ins>iny <ins>**A**</ins>ggregates in the <ins>**Ray**</ins>leigh regime) is a model that calculates the absorption efficiency and absorption cross-section of fractal aggregates. It is a very powerful and fast tool that can be used to estimate the amount of absorption that occurs in dust and haze particles of any shape, provided that the electromagnetic radiation is in the Rayleigh regime (see below for strict definition), often in the context of planetary atmospheres or protoplanetary disks. It obtains values within 10-20% of those calculated by a rigorous benchmark model (the discrete dipole approximation), but is $10^{13}$ times faster. It is provided here as two python functions. For full details of the methodology, or if the code is useful in your project, please cite the paper below:
 
   "MANTA-Ray: Supercharging Speeds for Calculating the Optical Properties of Fractal Aggregates in the Long-Wavelength Limit" (2024), Lodge, M.G., Wakeford H.R., and Leinhardt, Z.M.
 
@@ -26,7 +26,7 @@ The inputs to the functions are:
 
 Note that to be in the Rayleigh regime, and for this theory to work, it is assumed that $\lambda \geq 100R$, and the code will return an error message if this condition is not true.
 
-To use each of functions, just provide the above inputs, strictly in that order. For example, to determine the absorption efficiency of an aggregate of fractal dimension 1.8, with a radius of 0.5 μm, at a wavelength of 100 μm, and assuming a refractive index $m=n+k$ i $=3+0.5$ i:
+To use each of the functions, just provide the above inputs, strictly in that order. For example, to determine the absorption efficiency of an aggregate of fractal dimension 1.8, with a radius of 0.5 μm, at a wavelength of 100 μm, and assuming a refractive index $m=n+k$ i $=3+0.5$ i:
 
 	wavelength = 100   # in um
  	radius = 0.5   # in um
