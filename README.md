@@ -10,7 +10,7 @@ The easiest way to run MANTA-Ray is to install it into your python environment u
 
 	pip install MANTA_Ray_optics
 
-Then import the functions into your python code:
+Then import the functions into your python code **(IMPORTANT: Note the use of underscores _ instead of hyphens -, as suggested by the python PEP 8 style guide for module names)**:
 
 	from MANTA_Ray_optics import MANTA_Ray
 
