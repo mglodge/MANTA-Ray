@@ -40,7 +40,7 @@ To use each of functions, just provide the above inputs, strictly in that order.
  
 If MANTA-Ray installed correctly, you should see:
 
-	Q_abs = 0.021153387751343056  
+	0.021153387751343056  
 
 Two functions are provided:
 
