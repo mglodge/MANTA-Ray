@@ -26,7 +26,7 @@ The inputs to the functions are:
 
 Note that to be in the Rayleigh regime, and for this theory to work, it is assumed that $\lambda \geq 100R$, and the code will return an error message if this condition is not true.
 
-To use each of the functions, just provide the above inputs, strictly in that order. For example, to determine the absorption efficiency of an aggregate of fractal dimension 1.8, with a radius of 0.5 μm, at a wavelength of 100 μm, and assuming a refractive index $m=n+k$ i $=3+0.5$ i:
+To use each of the functions, just provide the above inputs, strictly in that order. For example, to determine the absorption efficiency of an aggregate of fractal dimension 1.8, with a radius of 0.5 μm, at a wavelength of 100 μm, and assuming a material refractive index $m=n+k$ i $=3+0.5$ i:
 
 	wavelength = 100   # in um
  	radius = 0.5   # in um
