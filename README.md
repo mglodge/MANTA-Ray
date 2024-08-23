@@ -10,9 +10,26 @@ The easiest way to run MANTA-Ray is to install it into your python environment u
 
 	pip install MANTA_Ray_optics
 
-Then import the functions into your python code **(IMPORTANT: Note the use of underscores _ instead of hyphens -, as suggested by the python PEP 8 style guide for module names)**:
+Then import the functions into your python code and try an example calulation **(IMPORTANT: Note the use of underscores _ instead of hyphens - for importing the module, as suggested by the python PEP 8 style guide)**:
 
-	from MANTA_Ray_optics import MANTA_Ray
+	# import the module
+  	from MANTA_Ray_optics import MANTA_Ray
+
+ 	# set the input variables
+ 	wavelength = 100   # in um
+ 	radius = 0.5   # in um
+	d_f = 1.8		
+ 	n = 3
+	k = 0.5
+
+	# calculate Q_abs
+	Q_abs = MANTA_Ray.find_Q_abs(wavelength, radius, d_f, n, k)
+ 
+	print(Q_abs)
+ 
+If MANTA-Ray installed correctly, you should see the value:
+
+	0.021153387751343056 
 
 The inputs to the functions are:
 
@@ -24,25 +41,9 @@ The inputs to the functions are:
 
 *Because the aggregates are non-spherical, they do not have a radius. To represent the physical size of the particle, we use the radius of a <i>sphere that has exactly the same volume</i> as the fractal aggregate (i.e. the radius if the aggregate material was squashed/compacted into a sphere). 
 
-Note that to be in the Rayleigh regime, and for this theory to work, it is assumed that $\lambda \geq 100R$, and the code will return an error message if this condition is not true.
+The example above determines the absorption efficiency of an aggregate of fractal dimension 1.8, with a radius of 0.5 μm, at a wavelength of 100 μm, and assuming a material refractive index $m=n+k$ i = 3 + 0.5 i. Note that to be in the Rayleigh regime, and for this theory to work, it is assumed that $\lambda \geq 100R$, and the code will return an error message (and not proceed) if this condition is not met.
 
-To use each of the functions, just provide the above inputs, strictly in that order. For example, to determine the absorption efficiency of an aggregate of fractal dimension 1.8, with a radius of 0.5 μm, at a wavelength of 100 μm, and assuming a material refractive index $m=n+k$ i $=3+0.5$ i:
-
-	wavelength = 100   # in um
- 	radius = 0.5   # in um
-	d_f = 1.8		
- 	n = 3
-	k = 0.5
-	
-	Q_abs = MANTA_Ray.find_Q_abs(wavelength, radius, d_f, n, k)   # calculate Q_abs
- 
-	print(Q_abs)
- 
-If MANTA-Ray installed correctly, you should see:
-
-	0.021153387751343056  
-
-Two functions are provided:
+To use the functions, just provide the above inputs, strictly in that order. There are two functions in this package:
 
 1) find_Q_abs: calculates absorption efficiency $Q_{abs,MR}$ (Eq. 5 in Lodge et al. 2024)
 2) find_C_abs: calculates absorption cross-section (where $C_{abs}=Q_{abs} \pi R^2$)
@@ -52,7 +53,7 @@ Both functions use the same input variables:
 	Q_abs = MANTA_Ray.find_Q_abs(wavelength, radius, d_f, n, k)
 	C_abs = MANTA_Ray.find_C_abs(wavelength, radius, d_f, n, k)
 
-If a pip install fails (or simply if you prefer), you could copy and paste the functions from MANTA_Ray.py directly into your code and use them in the same way.
+If a pip install fails (or simply if you prefer), you could copy and paste the functions from MANTA_Ray.py directly into your code and use them as regular functions instead.
 
 # The Model
 
